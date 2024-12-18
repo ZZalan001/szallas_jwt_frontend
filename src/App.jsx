@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route, NavLink} from 'react-router-dom';
-import Login from './Login';
-import SzallasList from './SzallasList';
+import {Login} from './Login';
+import {SzallasList} from './SzallasList';
 
 export const App=()=> {
   return (

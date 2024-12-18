@@ -20,8 +20,26 @@ export const SzallasList = () => {
                 setData(response.data);
             }
             catch(error){
-                setError(error);
+                setError("Adatok lekérése sikertelen!");
+                console.error("Hiba: ",error);
             }
         }
     },[]);
+    
+    return(
+        <div>
+            <h1>Szallasok</h1>
+            {error && <p style={{color: "red"}}>{error}</p>}
+            {data.length>0?(
+                <ul>
+                {data.map((szallas) => (
+                    <li key={szallas.id}>{szallas.nev} - {szallas.hostname} - {szallas.hostname}</li>
+                ))}
+            </ul>):(
+                <p>Szallasok nincsenek!</p>
+            )}
+            
+            
+        </div>
+    )
 }
