@@ -9,7 +9,7 @@ export const Login=()=> {
   const navigate = useNavigate();
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://szallasjwt.sulla.hu/login", { username, password });
+      const response = await axios.post("https://szallasjwt.sulla.hu/login", { username, password });
       const token = response.data.token;
       localStorage.setItem("jwt", token);
       setError('');
